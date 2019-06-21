@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi|Mali&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        h1 {
+            background: #2B3648;
+            color: white;
+            height: 120px;
+            line-height: 170px;
+            padding-left: 20px;
+        }
+
+        .slect {
+            margin-top: 50px
+        }
+
+        body {
+            background: #FCFAF2;
+        }
+
+        .menu {
+            background: white;
+            margin-top: 20px;
+
+        }
+
+        footer {
+            font-size: 1.2em;
+            color: white;
+            float: right;
+            margin-top: 20px;
+            animation: myfirst 5s;
+            -moz-animation: myfirst 5s;
+            -webkit-animation: myfirst 5s;
+            -o-animation: myfirst 5s;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        @keyframes myfirst {
+            0% {
+                color: pink;
+            }
+
+            25% {
+                color: rgb(216, 112, 173);
+            }
+
+            50% {
+                color: purple;
+            }
+
+            75% {
+                color: rgb(216, 112, 173);
+            }
+
+            100% {
+                color: pink;
+            }
+        }
+
+        @-webkit-keyframes myfirst {
+
+            0% {
+                color: pink;
+            }
+
+            25% {
+                color: rgb(216, 112, 173);
+            }
+
+            50% {
+                color: purple;
+            }
+
+            75% {
+                color: rgb(216, 112, 173);
+            }
+
+            100% {
+                color: pink;
+            }
+        }
+
+        .type {
+            font-size: 20px;
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 20px;
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+        }
+
+        .chinese {
+            font-size: 20px;
+            display: inline-block;
+            width: 33.333%;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .number {
+            font-size: 20px;
+            display: inline-block;
+            width: 12%;
+            text-align: center;
+            background: #2B3648;
+            color: white;
+        }
+
+
+        .chinese1 {
+            font-size: 20px;
+            display: inline-block;
+            width: 33.333%;
+            text-align: center;
+        }
+
+        .chinese:hover {
+            color: orange;
+            background: #e4e4e4;
+        }
+
+        .chinese:active,
+        .chinese:focus {
+            color: orangered;
+            background: #e4e4e4;
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transition-duration: 0.5s;
+            -webkit-transition-duration: 0.5s;
+
+        }
+
+        .menuItem {
+            border-top: 2px solid #e4e4e4;
+
+        }
+
+
+
+
+        .container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter {
+            margin-top: 5px;
+        }
+
+        .menuItem:nth-of-type(1) {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .menuItem:nth-last-child()) {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .up {
+            background: orange;
+            color: white;
+            font-weight: bold;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .number1 {
+            font-size: 20px;
+            display: inline-block;
+            width: 12%;
+            text-align: center;
+            background: #2B3648;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <section>
+            <h1>日本語学習</h1>
+            <div class="container">
+
+                <div class="title">
+
+                    <div class="input form-inline">
+                        <div class="row">
+                            <select v-model='input.lesson' class="slect form-control">
+                                <option>第一課</option>
+                                <option>第二課</option>
+                                <option>第三課</option>
+                                <option>第四課</option>
+                                <option>第五課</option>
+                                <option>第六課</option>
+                                <option>第七課</option>
+                            </select>
+                            <input class='filter form-control' type="text" v-model.trim='input.chinese' placeholder="中文关键字">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="menu">
+                    <div class="up">
+                        <span class="number1">號碼</span>
+                        <span class="type">漢字假名</span>
+                        <span class="title">純假名</span>
+                        <span class="chinese1">中文</span>
+                    </div>
+                    <div class="menuItem" v-for='(item,index) in titleMenu'>
+                        <span class="number">{{index +1}}</span>
+                        <span class="type">{{item.type}}</span>
+                        <span class="title">{{item.tittle}}</span>
+                        <span class="chinese">{{item.chinese}}</span>
+                    </div>
+                </div>
+                <footer>Design by Dylan ®</footer>
+            </div>
+        </section>
+
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js'></script>
+    <script>
+        let data = {
+            index: 0,
+            input: {
+                lesson: '第一課',
+                type: '',
+                tittle: '',
+                chinese: '',
+            },
+            menu: [{
+                    lesson: '第一課',
+                    type: '私',
+                    tittle: 'わたし',
+                    chinese: '我',
+                }, {
+                    lesson: '第一課',
+                    type: '学生',
+                    tittle: 'がくせい',
+                    chinese: '學生',
+                },
+                {
+                    lesson: '第一課',
+                    type: '嬉しい',
+                    tittle: 'うれしい',
+                    chinese: '開心',
+                },
+                {
+                    lesson: '第一課',
+                    type: '犬',
+                    tittle: 'いぬ',
+                    chinese: '小狗',
+                },
+                {
+                    lesson: '第一課',
+                    type: '賑やか',
+                    tittle: 'にぎやか',
+                    chinese: '熱鬧',
+                },
+                {
+                    lesson: '第一課',
+                    type: '夜市',
+                    tittle: 'よいち',
+                    chinese: '夜市',
+                },
+                {
+                    lesson: '第一課',
+                    type: '寒い',
+                    tittle: 'さむい',
+                    chinese: '冷',
+                },
+                {
+                    lesson: '第一課',
+                    type: '今日',
+                    tittle: 'きょう',
+                    chinese: '今天',
+                },
+                {
+                    lesson: '第一課',
+                    type: '大きい',
+                    tittle: 'おおきい',
+                    chinese: '大的',
+                },
+                {
+                    lesson: '第一課',
+                    type: 'ご飯',
+                    tittle: 'ごはん',
+                    chinese: '飯',
+                },
+                {
+                    lesson: '第一課',
+                    type: '食べる',
+                    tittle: 'たべる',
+                    chinese: '吃飯',
+                },
+                {
+                    lesson: '第一課',
+                    type: '猫',
+                    tittle: 'ねこ',
+                    chinese: '貓',
+                },
+                {
+                    lesson: '第一課',
+                    type: '寝る',
+                    tittle: 'ねる',
+                    chinese: '睡覺',
+                },
+                {
+                    lesson: '第一課',
+                    type: 'コップ',
+                    tittle: 'コップ',
+                    chinese: '杯子',
+                },
+                //           第二課      //
+                {
+                    lesson: '第二課',
+                    type: '何',
+                    tittle: 'なん',
+                    chinese: '什麼',
+                },
+                {
+                    lesson: '第二課',
+                    type: '彼',
+                    tittle: 'かれ',
+                    chinese: '他',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'はい',
+                    tittle: 'はい',
+                    chinese: '是的',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'いいえ',
+                    tittle: 'いいえ',
+                    chinese: '不是的',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'これ',
+                    tittle: 'これ',
+                    chinese: '這個',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'それ',
+                    tittle: 'それ',
+                    chinese: '那個',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'あれ',
+                    tittle: 'あれ',
+                    chinese: '那一個',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'どれ',
+                    tittle: 'どれ',
+                    chinese: '哪個',
+                }, {
+                    lesson: '第二課',
+                    type: 'ここ',
+                    tittle: 'ここ',
+                    chinese: '這裡',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'そこ',
+                    tittle: 'そこ',
+                    chinese: '那裡',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'あそこ',
+                    tittle: 'あそこ',
+                    chinese: '那～裡',
+                },
+                {
+                    lesson: '第二課',
+                    type: 'どこ',
+                    tittle: 'どこ',
+                    chinese: '哪裡',
+                },
+
+
+
+
+
+
+                // 第三課 //
+                {
+                    lesson: '第三課',
+                    type: '社長',
+                    tittle: 'しゃちょう',
+                    chinese: '總經理',
+                },
+                {
+                    lesson: '第三課',
+                    type: '社員',
+                    tittle: 'しゃいん',
+                    chinese: '職員',
+                },
+                   {
+                    lesson: '第三課',
+                    type: '先生',
+                    tittle: 'せんせい',
+                    chinese: '老師(自,他稱)',
+                },
+                {
+                    lesson: '第三課',
+                    type: '教師',
+                    tittle: 'きょうし',
+                    chinese: '老師(自稱)',
+                },
+                {
+                    lesson: '第三課',
+                    type: '病院',
+                    tittle: 'びょういん',
+                    chinese: '醫院',
+                },
+                {
+                    lesson: '第三課',
+                    type: '喫茶店',
+                    tittle: 'きっさてん',
+                    chinese: '咖啡廳',
+                },
+                {
+                    lesson: '第三課',
+                    type: '学校',
+                    tittle: 'がっこう',
+                    chinese: '學校',
+                },
+                {
+                    lesson: '第三課',
+                    type: 'ジュース',
+                    tittle: 'ジュース',
+                    chinese: '果汁',
+                },
+                {
+                    lesson: '第三課',
+                    type: '小説',
+                    tittle: 'しょうせつ',
+                    chinese: '小說',
+                },
+
+                {
+                    lesson: '第三課',
+                    type: 'ノート',
+                    tittle: 'ノート',
+                    chinese: '筆記本',
+                },
+                {
+                    lesson: '第三課',
+                    type: '車',
+                    tittle: 'くるま',
+                    chinese: '車子',
+                },
+
+
+
+            ]
+        }
+        var app = new Vue({
+            el: '.app',
+            data: data,
+            computed: {
+                typeMenu() {
+                    if (this.input.lesson !== '全部') {
+                        return this.menu.filter(item => {
+                            return item.lesson === this.input.lesson
+                        })
+                    } else {
+                        return this.menu
+                    }
+                },
+                titleMenu() {
+                    if (this.input.chinese) {
+                        return this.typeMenu.filter(item => {
+                            let content = item.chinese.toLowerCase()
+                            let keyword = this.input.chinese.toLowerCase()
+                            return content.indexOf(keyword) !== -1
+                        })
+                    } else {
+                        return this.typeMenu
+                    }
+                }
+            },
+
+        })
+
+    </script>
+</body>
+
+</html>
