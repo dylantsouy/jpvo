@@ -11,11 +11,11 @@
 
     <title>Document</title>
     <style>
-        h1 {
+        .top {
             background: #2B3648;
             color: white;
-            height: 120px;
-            line-height: 170px;
+            height: 300%;
+            line-height:300%;
             padding-left: 20px;
         }
 
@@ -164,6 +164,7 @@
 
         .filter {
             margin-top: 5px;
+
         }
 
         .menuItem:nth-of-type(1) {
@@ -191,19 +192,33 @@
             color: white;
         }
 
+        .les {
+          float: right;
+            position: relative;
+            bottom: 50px;
+            right: 50px;
+            color: white;
+            height: 80px;
+            background: pink;
+            border:white 5px solid;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="app">
         <section>
-            <h1>日本語学習</h1>
+            <h1 class="top">日本語学習</h1>
             <div class="container">
-
+                  <div class="les">
+                    <h1>{{input.lesson}}</h1>
+                </div>
                 <div class="title">
 
                     <div class="input form-inline">
                         <div class="row">
+                         
                             <select v-model='input.lesson' class="slect form-control">
                                 <option>第一課</option>
                                 <option>第二課</option>
@@ -216,8 +231,8 @@
                             <input class='filter form-control' type="text" v-model.trim='input.chinese' placeholder="中文关键字">
                         </div>
                     </div>
-
                 </div>
+
                 <div class="menu">
                     <div class="up">
                         <span class="number1">號碼</span>
@@ -421,7 +436,7 @@
                     tittle: 'しゃいん',
                     chinese: '職員',
                 },
-                   {
+                {
                     lesson: '第三課',
                     type: '先生',
                     tittle: 'せんせい',
