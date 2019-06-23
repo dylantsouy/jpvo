@@ -3,40 +3,59 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" href="http://pngimg.com/uploads/carrot/carrot_PNG4997.png" type="image/x-icon" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="ie=edge"
+    >
+    <link
+        rel="icon"
+        href="http://pngimg.com/uploads/carrot/carrot_PNG4997.png"
+        type="image/x-icon"
+    />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Mali&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kosugi|Mali&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    >
+    <link
+        href="https://fonts.googleapis.com/css?family=Mali&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        href="https://fonts.googleapis.com/css?family=Kosugi|Mali&display=swap"
+        rel="stylesheet"
+    >
 
     <title>兔兔の日本語学習</title>
     <style>
         .rab2 {
             position: absolute;
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             background-image: url('http://pngimg.com/uploads/rabbit/rabbit_PNG3785.png');
-            background-size: 70px 70px;
+            background-size: 90px 90px;
             background-repeat: no-repeat;
             background-position: 0px 0px;
-            left: 40px;
+            left: 50px;
             top: 50px;
-          
-           
+
 
         }
 
-      
         .top {
-
             background-color: #2B3648;
             font-weight: bold;
             color: white;
-            height: 250%;
-            line-height: 250%;
-            padding-left: 130px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 270%;
+            padding-left: 150px;
         }
 
         .slect {
@@ -157,8 +176,6 @@
             display: inline-block;
             width: 29%;
             text-align: center;
-
-
         }
 
         .number {
@@ -189,7 +206,7 @@
             margin-right: auto;
         }
 
-        .menuItem:nth-last-child()) {
+        .menuItem:nth-last-child() {
             border-radius: 0 0 10px 10px;
         }
 
@@ -220,11 +237,10 @@
             cursor: pointer;
             color: white;
             background: rgba(100, 100, 100, .5);
-          
+
             box-shadow: 3px 3px 6px rgba(0, 0, 0, .3);
         }
 
-        
         .can:hover {
             background: rgba(100, 100, 100, .8);
             color: #2B3648;
@@ -254,30 +270,35 @@
             bottom: 30px;
             left: 30px;
             background-position: 0px 0px;
-             -moz-animation: rab22 3s;
+            animation: rab22 3s;
+            -moz-animation: rab22 3s;
             -webkit-animation: rab22 3s;
             -o-animation: rab22 3s;
             animation-iteration-count: 2;
             -webkit-animation-iteration-count: 2;
             animation-direction: normal;
-            animation-delay:1s;
+            animation-delay: 1s;
         }
 
-         @keyframes rab22 {
+        @keyframes rab22 {
             0% {
                 bottom: 30px;
             }
 
             25% {
-                bottom: 150px;transform: rotate(720deg);
+                bottom: 150px;
+                transform: rotate(720deg);
             }
 
             50% {
-                bottom: 50px;transform: scale(2.5);left: 40px;
+                bottom: 50px;
+                transform: scale(2.5);
+                left: 40px;
             }
 
             75% {
-                 bottom: 120px;
+                bottom: 120px;
+
             }
 
             100% {
@@ -286,27 +307,30 @@
         }
 
         @-webkit-keyframes rab22 {
-              0% {
+            0% {
                 bottom: 30px;
             }
 
             25% {
-                bottom: 150px;transform: rotate(720deg);
+                bottom: 150px;
+                transform: rotate(720deg);
             }
 
             50% {
-                bottom: 50px;transform: scale(2.5);left: 40px;
+                bottom: 50px;
+                transform: scale(2.5);
+                left: 40px;
             }
 
             75% {
-                 bottom: 120px;
+                bottom: 120px;
+
             }
 
             100% {
                 bottom: 30px;
             }
         }
-       
 
         .link {
             width: 120px;
@@ -325,9 +349,9 @@
             font-weight: bold;
             box-shadow: 1px 5px 5px rgba(0, 0, 0, .5);
             cursor: pointer;
-           
+
         }
- 
+
         .link:hover {
             opacity: .9;
             color: orangered;
@@ -357,19 +381,35 @@
             opacity: .9;
         }
 
-        @media (max-width:550px) {
+        @media (max-width:650px) {
             .les {
                 float: right;
                 position: absolute;
-                padding-top: 40px;
+                padding-top: 20px;
                 padding-left: 40px;
-                top: 100px;
+                top: 50px;
                 right: 50px;
                 color: white;
-                height: 80px;
+                height: 60px;
                 background: pink;
                 border: white 5px solid;
                 text-shadow: 2px 2px 1px #2B3648;
+            }
+
+            .top {
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .rab2 {
+                top: 10px;
+                background-size: 50px 50px;
+            }
+        }
+
+        @media (max-width:560px) {
+            .les {
+                display: none;
             }
         }
 
@@ -413,8 +453,16 @@
                 font-size: 10px;
             }
 
-            .les {
-                display: none;
+
+            .rab2 {
+                margin-left: 230px;
+                top: 15px;
+                background-size: 40px 40px;
+            }
+
+            .top {
+                font-size: 200%;
+                padding-left: 20px;
             }
         }
 
@@ -458,7 +506,6 @@
                 display: none;
             }
         }
-
     </style>
 </head>
 
@@ -471,9 +518,9 @@
                     <h1>{{input.lesson}}</h1>
                 </a>
             </div>
-            <h1 class="top">
+            <div class="top">
                 <div class="rab2"></div>兔兔日本語学習
-            </h1>
+            </div>
             <div class="container">
 
                 <div class="title2">
@@ -481,14 +528,22 @@
                     <div class="input form-inline">
                         <div class="row">
 
-                            <select v-model='input.lesson' class="slect form-control">
+                            <select
+                                v-model='input.lesson'
+                                class="slect form-control"
+                            >
                                 <option>第一課</option>
                                 <option>第二課</option>
                                 <option>第三課</option>
                                 <option>第四課</option>
                                 <option>第五課</option>
                             </select>
-                            <input class='filter form-control' type="text" v-model.trim='input.chinese' placeholder="中文關鍵字">
+                            <input
+                                class='filter form-control'
+                                type="text"
+                                v-model.trim='input.chinese'
+                                placeholder="中文關鍵字"
+                            >
 
                         </div>
                     </div>
@@ -502,7 +557,10 @@
                         <span class="title1">純假名</span>
                         <span class="chinese1">中文</span>
                     </div>
-                    <div class="menuItem" v-for='(item,index) in titleMenu'>
+                    <div
+                        class="menuItem"
+                        v-for='(item,index) in titleMenu'
+                    >
                         <span class="number">{{index +1}}</span>
                         <span class="type">{{item.type}}</span>
                         <span class="title">{{item.tittle}}</span>
@@ -510,11 +568,24 @@
                     </div>
                 </div>
                 <div class="ad">
-                    <div class="can" @click='doClick()' v-if='isShow'>X</div>
-                    <div class="rab" v-if='isShow'></div>
-                    <a href="https://dylantsouy.github.io/jplearn/" target="_blank">
+                    <div
+                        class="can"
+                        @click='doClick()'
+                        v-if='isShow'
+                    >X</div>
+                    <div
+                        class="rab"
+                        v-if='isShow'
+                    ></div>
+                    <a
+                        href="https://dylantsouy.github.io/jplearn/"
+                        target="_blank"
+                    >
 
-                        <div class="link" v-if='isShow'>單字卡連結</div>
+                        <div
+                            class="link"
+                            v-if='isShow'
+                        >單字卡連結</div>
                     </a>
                 </div>
                 <footer>Design by Dylan ®</footer>
@@ -533,7 +604,6 @@
                 tittle: '',
                 chinese: '',
                 linka: '',
-
             },
             menu: [{
                     lesson: '第一課',
@@ -992,13 +1062,6 @@
                     tittle: 'じはん',
                     chinese: '點半',
                 },
-
-
-
-
-
-
-
             ]
         }
         var app = new Vue({
@@ -1010,7 +1073,6 @@
                 }
             },
             computed: {
-
                 typeMenu() {
                     if (this.input.lesson !== '全部') {
                         return this.menu.filter(item => {
@@ -1033,7 +1095,6 @@
                 },
             }
         })
-
     </script>
 </body>
 
