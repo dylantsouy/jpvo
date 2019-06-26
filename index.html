@@ -169,17 +169,19 @@
             font-family: "標楷體", "儷黑 Pro";
         }
 
-        .menuItem:nth-of-type(even) .chinese:active,
-        .menuItem:nth-of-type(even) .chinese:hover,
-        .menuItem:nth-of-type(even) .chinese:focus {
+        .chinese:hover {
+            color: transparent;
+        }
+
+        .menuItem:nth-of-type(odd) .chinese:active,
+        .menuItem:nth-of-type(odd) .chinese:focus {
             color: black;
             background-position: -100% 5px;
             transition-duration: 2s;
         }
 
-        .menuItem:nth-of-type(odd) .chinese:active,
-        .menuItem:nth-of-type(odd) .chinese:hover,
-        .menuItem:nth-of-type(odd) .chinese:focus {
+        .menuItem:nth-of-type(even) .chinese:active,
+        .menuItem:nth-of-type(even) .chinese:focus {
             color: black;
             background-position: 200% 5px;
             transition-duration: 2s;
@@ -604,7 +606,11 @@
                         <span class="number">{{index +1}}</span>
                         <span class="type">{{item.type}}</span>
                         <span class="title">{{item.tittle}}</span>
-                        <span class="chinese">{{item.chinese}}</span>
+                        <a
+                            href='#'
+                            @click.prevent=''
+                            class="chinese"
+                        >{{item.chinese}}</a>
                     </div>
                 </div>
                 <div class="ad">
