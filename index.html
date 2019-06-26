@@ -172,13 +172,22 @@
 
 
 
-        .chinese:active,
-        .chinese:focus {
+        .menuItem:nth-last-of-type(odd) .chinese:focus {
             border: 0;
             color: black;
-            background: none;
+            background-position: 200% 5px;
             -webkit-transition-duration: 2s;
             transition-duration: 2s;
+            outline: 0;
+        }
+
+        .menuItem:nth-last-of-type(even) .chinese:focus {
+            border: 0;
+            color: black;
+            background-position: -100% 5px;
+            -webkit-transition-duration: 2s;
+            transition-duration: 2s;
+            outline: 0;
         }
 
 
