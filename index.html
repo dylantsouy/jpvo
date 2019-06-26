@@ -37,8 +37,6 @@
             background-position: 0px 0px;
             left: 50px;
             top: 20px;
-
-
         }
 
         .top {
@@ -50,7 +48,6 @@
             font-size: 270%;
             padding-left: 150px;
             font-family: "標楷體", "儷黑 Pro";
-
         }
 
         .slect {
@@ -169,14 +166,23 @@
             background-repeat: no-repeat;
             background-position: 50% 5px;
             cursor: pointer;
-            transition-duration: 0.3s;
             font-family: "標楷體", "儷黑 Pro";
-
         }
 
-        .chinese:hover {
-            opacity: .8;
-            transform: scale(1.5);
+        .menuItem:nth-of-type(odd) .chinese:active,
+        .menuItem:nth-of-type(odd) .chinese:hover,
+        .menuItem:nth-of-type(odd) .chinese:focus {
+            color: black;
+            background-position: -100% 5px;
+            transition-duration: 2s;
+        }
+
+        .menuItem:nth-of-type(even) .chinese:active,
+        .menuItem:nth-of-type(even) .chinese:hover,
+        .menuItem:nth-of-type(even) .chinese:focus {
+            color: black;
+            background-position: 200% 5px;
+            transition-duration: 2s;
         }
 
         .chinese1 {
@@ -184,7 +190,6 @@
             display: inline-block;
             width: 29%;
             text-align: center;
-
         }
 
         .number {
@@ -207,7 +212,6 @@
 
         .menuItem {
             font-family: "標楷體", "儷黑 Pro";
-
             border-top: 2px solid #e4e4e4;
         }
 
@@ -228,7 +232,6 @@
             line-height: 50px;
             border-radius: 0 20px 0 0;
             font-family: "標楷體", "儷黑 Pro";
-
         }
 
         .can {
@@ -249,7 +252,6 @@
             cursor: pointer;
             color: white;
             background: rgba(100, 100, 100, .5);
-
             box-shadow: 3px 3px 6px rgba(0, 0, 0, .3);
         }
 
@@ -271,7 +273,6 @@
             border: white 5px solid;
             text-shadow: 2px 2px 1px #2B3648;
             font-family: "標楷體", "儷黑 Pro";
-
         }
 
         .rab {
@@ -312,7 +313,6 @@
 
             75% {
                 bottom: 120px;
-
             }
 
             100% {
@@ -338,7 +338,6 @@
 
             75% {
                 bottom: 120px;
-
             }
 
             100% {
@@ -368,8 +367,6 @@
             font-weight: bold;
             box-shadow: 1px 5px 5px rgba(0, 0, 0, .5);
             cursor: pointer;
-
-
         }
 
         .link:hover {
@@ -428,18 +425,14 @@
             }
 
             .chinese {
-
                 background-size: 10px 10px;
-
                 width: 30%;
-
             }
 
             .title,
             .title1 {
                 width: 28%;
             }
-
         }
 
         @media (max-width:576px) {
@@ -464,7 +457,6 @@
             .number1 {
                 font-size: 16px;
                 width: 11%;
-
             }
 
             .type {
@@ -500,7 +492,6 @@
                 border-top: 1px solid #e4e4e4;
                 font-size: 10px;
             }
-
 
             .rab2 {
                 margin-left: 140px;
@@ -580,11 +571,12 @@
                                 v-model='input.lesson'
                                 class="slect form-control"
                             >
-                                <option>第一課</option>
-                                <option>第二課</option>
-                                <option>第三課</option>
-                                <option>第四課</option>
-                                <option>第五課</option>
+                                <option>看全部單元</option>
+                                <option>第一單元</option>
+                                <option>第二單元</option>
+                                <option>第三單元</option>
+                                <option>第四單元</option>
+                                <option>第五單元</option>
                             </select>
                             <input
                                 class='filter form-control'
@@ -612,10 +604,7 @@
                         <span class="number">{{index +1}}</span>
                         <span class="type">{{item.type}}</span>
                         <span class="title">{{item.tittle}}</span>
-                        <span
-                            class="chinese"
-                            @click='addClass()'
-                        >{{item.chinese}}</span>
+                        <span class="chinese">{{item.chinese}}</span>
                     </div>
                 </div>
                 <div class="ad">
@@ -646,472 +635,504 @@
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js'></script>
     <script>
-
     </script>
     <script>
         let data = {
             isShow: true,
             index: 0,
             input: {
-                lesson: '第一課',
+                lesson: '第一單元',
                 type: '',
                 tittle: '',
                 chinese: '',
                 linka: '',
             },
             menu: [{
-                    lesson: '第一課',
+                    lesson: '第一單元',
+                    type: '',
+                    tittle: '第一單元 ✎',
+                    chinese: '',
+                }, {
+                    lesson: '第一單元',
                     type: '私',
                     tittle: 'わたし',
                     chinese: '我',
-                }, {
-                    lesson: '第一課',
+                },
+                {
+                    lesson: '第一單元',
                     type: '学生',
                     tittle: 'がくせい',
                     chinese: '學生',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '嬉しい',
                     tittle: 'うれしい',
                     chinese: '開心',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '犬',
                     tittle: 'いぬ',
                     chinese: '小狗',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '賑やか',
                     tittle: 'にぎやか',
                     chinese: '熱鬧',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '夜市',
                     tittle: 'よいち',
                     chinese: '夜市',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '寒い',
                     tittle: 'さむい',
                     chinese: '冷',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '今日',
                     tittle: 'きょう',
                     chinese: '今天',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '大きい',
                     tittle: 'おおきい',
                     chinese: '大的',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: 'ご飯',
                     tittle: 'ごはん',
                     chinese: '飯',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '食べる',
                     tittle: 'たべる',
                     chinese: '吃飯',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '猫',
                     tittle: 'ねこ',
                     chinese: '貓',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: '寝る',
                     tittle: 'ねる',
                     chinese: '睡覺',
                 },
                 {
-                    lesson: '第一課',
+                    lesson: '第一單元',
                     type: 'コップ',
                     tittle: 'コップ',
                     chinese: '杯子',
                 },
-                //           第二課      //
+                //           第二單元      //
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
+                    type: '',
+                    tittle: '第二單元 ✎',
+                    chinese: '',
+                },
+                {
+                    lesson: '第二單元',
                     type: '何',
                     tittle: 'なん',
                     chinese: '什麼',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: '彼',
                     tittle: 'かれ',
                     chinese: '他',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'はい',
                     tittle: 'はい',
                     chinese: '是的',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'いいえ',
                     tittle: 'いいえ',
                     chinese: '不是的',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'これ',
                     tittle: 'これ',
                     chinese: '這個',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'それ',
                     tittle: 'それ',
                     chinese: '那個',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'あれ',
                     tittle: 'あれ',
                     chinese: '那一個',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'どれ',
                     tittle: 'どれ',
                     chinese: '哪個',
-                }, {
-                    lesson: '第二課',
+                },
+                {
+                    lesson: '第二單元',
                     type: 'ここ',
                     tittle: 'ここ',
                     chinese: '這裡',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'そこ',
                     tittle: 'そこ',
                     chinese: '那裡',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'あそこ',
                     tittle: 'あそこ',
                     chinese: '那～裡',
                 },
                 {
-                    lesson: '第二課',
+                    lesson: '第二單元',
                     type: 'どこ',
                     tittle: 'どこ',
                     chinese: '哪裡',
                 },
-                // 第三課 //
+
+                // 第三單元 //
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
+                    type: '',
+                    tittle: '第三單元 ✎',
+                    chinese: '',
+                },
+                {
+                    lesson: '第三單元',
                     type: '社長',
                     tittle: 'しゃちょう',
                     chinese: '總經理',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '社員',
                     tittle: 'しゃいん',
                     chinese: '職員',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '先生',
                     tittle: 'せんせい',
                     chinese: '老師(自,他稱)',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '教師',
                     tittle: 'きょうし',
                     chinese: '老師(自稱)',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '病院',
                     tittle: 'びょういん',
                     chinese: '醫院',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '喫茶店',
                     tittle: 'きっさてん',
                     chinese: '咖啡廳',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '学校',
                     tittle: 'がっこう',
                     chinese: '學校',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: 'ジュース',
                     tittle: 'ジュース',
                     chinese: '果汁',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '小説',
                     tittle: 'しょうせつ',
                     chinese: '小說',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: 'ノート',
                     tittle: 'ノート',
                     chinese: '筆記本',
                 },
                 {
-                    lesson: '第三課',
+                    lesson: '第三單元',
                     type: '車',
                     tittle: 'くるま',
                     chinese: '車子',
                 },
-                // 第四課 //
+                // 第四單元 //
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
+                    type: '',
+                    tittle: '第四單元 ✎',
+                    chinese: '',
+                },
+                {
+                    lesson: '第四單元',
                     type: '朝',
                     tittle: 'あさ',
                     chinese: '早上',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '昼',
                     tittle: 'ひる',
                     chinese: '下午',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '夜',
                     tittle: 'よる',
                     chinese: '晩上',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'おはよう',
                     tittle: 'おはよう',
                     chinese: '早上好',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'こんにちは',
                     tittle: 'こんにちは',
                     chinese: '中午好',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'こんばんは',
                     tittle: 'こんばんは',
                     chinese: '晚上好',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '午前',
                     tittle: 'ごぜん',
                     chinese: '上午',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '午後',
                     tittle: 'ごご',
                     chinese: '下午',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'すみません',
                     tittle: 'すみません',
                     chinese: '不好意思',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '今',
                     tittle: 'いま',
                     chinese: '現在',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '家',
                     tittle: 'うち',
                     chinese: '家',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: '何時',
                     tittle: 'なんじ',
                     chinese: '幾點',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'から',
                     tittle: 'から',
                     chinese: '從～',
                 },
                 {
-                    lesson: '第四課',
+                    lesson: '第四單元',
                     type: 'まで',
                     tittle: 'まで',
                     chinese: '到～',
                 },
-                // 第五課 //
+                // 第五單元 //
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
+                    type: '',
+                    tittle: '第五單元 ✎',
+                    chinese: '',
+                },
+                {
+                    lesson: '第五單元',
                     type: '一時',
                     tittle: 'いちじ',
                     chinese: '一點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '二時',
                     tittle: 'にじ',
                     chinese: '兩點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '三時',
                     tittle: 'さんじ',
                     chinese: '三點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '四時',
                     tittle: 'よじ',
                     chinese: '四點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '五時',
                     tittle: 'ごじ',
                     chinese: '五點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '六時',
                     tittle: 'ろくじ',
                     chinese: '六點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '七時',
                     tittle: 'しちじ',
                     chinese: '七點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '八時',
                     tittle: 'はちじ',
                     chinese: '八點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '九時',
                     tittle: 'くじ',
                     chinese: '九點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '十時',
                     tittle: 'じゅうじ',
                     chinese: '十點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '十一時',
                     tittle: 'じゅういちじ',
                     chinese: '十一點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '十二時',
                     tittle: 'じゅうにじ',
                     chinese: '十二點',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '一分',
                     tittle: 'いっぷん',
                     chinese: '一分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '二分',
                     tittle: 'にふん',
                     chinese: '二分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '三分',
                     tittle: 'さんぷん',
                     chinese: '三分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '四分',
                     tittle: 'よんぷん',
                     chinese: '四分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '五分',
                     tittle: 'ごふん',
                     chinese: '五分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '六分',
                     tittle: 'ろっぷん',
                     chinese: '六分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '七分',
                     tittle: 'ななふん',
                     chinese: '七分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '八分',
                     tittle: 'はっぷん',
                     chinese: '八分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '九分',
                     tittle: 'きゅうふん',
                     chinese: '九分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '十分',
                     tittle: 'じっぷん',
                     chinese: '十分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '十一分',
                     tittle: 'じゅういっぷん',
                     chinese: '十一分',
-                }, {
-                    lesson: '第五課',
+                },
+                {
+                    lesson: '第五單元',
                     type: '十二分',
                     tittle: 'じゅうにふん',
                     chinese: '十二分',
                 },
                 {
-                    lesson: '第五課',
+                    lesson: '第五單元',
                     type: '時半',
                     tittle: 'じはん',
                     chinese: '點半',
@@ -1128,7 +1149,7 @@
             },
             computed: {
                 typeMenu() {
-                    if (this.input.lesson !== '全部') {
+                    if (this.input.lesson !== '看全部單元') {
                         return this.menu.filter(item => {
                             return item.lesson === this.input.lesson
                         })
@@ -1147,15 +1168,8 @@
                         return this.typeMenu
                     }
                 },
-                addClass() {
-                    const lis = document.querySelectorAll('span');
-                    for (let span of lis) {
-                        span.addEventListener('click', function () {
-                            this.classList.toggle('hide');
-                        })
-                    }
-                }
-            }
+
+            },
         })
     </script>
 </body>
