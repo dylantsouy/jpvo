@@ -828,7 +828,7 @@
                         <div class="link" v-if='isShow'>單字卡連結</div>
                     </a>
                 </div>
-                <footer>Design by Dylan ®</footer>
+                <footer>Design by Dylan</footer>
                 <label for="toggle"><img class='rab3' src='http://pngimg.com/uploads/rabbit/rabbit_PNG3802.png'>五十音</label>
                 <input type="checkbox" id="toggle">
                 <aside>
@@ -1427,10 +1427,10 @@
                     }
                 },
                 titleMenu() {
-                    if (this.input.chinese | this.input.title) {
+                    if (this.input.chinese) {
                         return this.menu.filter(item => {
-                            let content = item.toLowerCase()
-                            let keyword = this.input.toLowerCase()
+                            let content = item.chinese.toLowerCase()
+                            let keyword = this.input.chinese.toLowerCase()
                             return content.includes(keyword)
                         })
                     } else {
